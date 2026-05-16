@@ -43,7 +43,8 @@ function Index() {
       className="fixed inset-0 overflow-hidden transition-colors duration-700"
       style={{
         background: bg,
-        ["--knob-size" as any]: "clamp(130px, 18vw, 200px)",
+        ["--knob-size" as any]: "clamp(110px, 14vw, 170px)",
+        ["--dial-area" as any]: "clamp(180px, 22vh, 240px)",
       }}
     >
       <Cursor />
