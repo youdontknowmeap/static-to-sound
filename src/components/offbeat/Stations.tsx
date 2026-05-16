@@ -152,7 +152,7 @@ export function Station3Think() {
   )[0];
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="relative w-full min-h-[280px] flex items-center justify-center overflow-hidden py-10">
       <div className="absolute inset-0 pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -170,8 +170,8 @@ export function Station3Think() {
         ))}
       </div>
 
-      <button onClick={() => go(-1)} data-cursor="grab" className="absolute left-4 md:left-10 text-3xl md:text-5xl" style={{ color: "var(--text-secondary)" }}>‹</button>
-      <button onClick={() => go(1)} data-cursor="grab" className="absolute right-4 md:right-10 text-3xl md:text-5xl" style={{ color: "var(--text-secondary)" }}>›</button>
+      <button onClick={() => go(-1)} data-cursor="grab" className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-3xl md:text-5xl z-10" style={{ color: "var(--text-secondary)" }}>‹</button>
+      <button onClick={() => go(1)} data-cursor="grab" className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-3xl md:text-5xl z-10" style={{ color: "var(--text-secondary)" }}>›</button>
 
       <motion.div
         key={idx}
@@ -179,20 +179,20 @@ export function Station3Think() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-2xl text-center px-8"
+        className="max-w-2xl text-center px-12 md:px-20"
       >
-        <div className="font-display italic text-2xl md:text-[36px] leading-tight" style={{ color: "var(--text-primary)" }}>
+        <div className="font-display italic text-xl md:text-3xl leading-tight" style={{ color: "var(--text-primary)" }}>
           {statements[idx].map((line, i) => (
             <div key={i}>{line || "\u00A0"}</div>
           ))}
         </div>
       </motion.div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
         {statements.map((_, i) => (
           <div
             key={i}
-            className="w-2 h-2 rounded-full"
+            className="w-1.5 h-1.5 rounded-full"
             style={{
               background: i === idx ? "var(--accent)" : "transparent",
               border: "1px solid var(--accent)",
