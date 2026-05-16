@@ -33,16 +33,10 @@ export function Station1Who() {
           ARYAMAN.
         </motion.h1>
         <motion.p custom={2} variants={fadeUp} initial="hidden" animate="show" className="mt-4 text-lg md:text-xl" style={{ color: "var(--text-primary)" }}>
-          Product Design Lead.<br />Based in India.<br />Building things that feel inevitable in hindsight.
+          Product Designer.<br />Based in India.<br />Building things that feel inevitable in hindsight.
         </motion.p>
         <motion.p custom={4} variants={fadeUp} initial="hidden" animate="show" className="mt-6 text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>
-          5+ years designing products people actually use. Former lead at{" "}
-          <span className="relative group" data-cursor="grab">
-            <span className="underline decoration-dotted" style={{ color: "var(--text-primary)" }}>Elevation Labs</span>
-            <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-8 whitespace-nowrap font-mono-ob text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition" style={{ background: "#000", color: "var(--accent)", border: "1px solid var(--accent)" }}>
-              Product Design Lead, 2023–2025
-            </span>
-          </span>.
+          1 year designing products people actually use.
         </motion.p>
         <motion.p custom={6} variants={fadeUp} initial="hidden" animate="show" className="mt-6 font-display italic text-xl md:text-2xl" style={{ color: "var(--accent)" }}>
           Currently tuned in to: what's next.
