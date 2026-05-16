@@ -9,8 +9,9 @@ const fadeUp = {
 
 export function Station0Static() {
   return (
-    <div className="relative w-full h-full static-noise flex items-center justify-center overflow-hidden">
-      <div className="text-center">
+    <div className="relative w-full h-full min-h-[260px] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 static-noise opacity-60" />
+      <div className="relative text-center px-6">
         <div className="font-mono-ob text-base md:text-2xl tracking-[0.3em]" style={{ color: "var(--text-primary)" }}>
           ░░ SEARCHING FOR SIGNAL ░░
         </div>
