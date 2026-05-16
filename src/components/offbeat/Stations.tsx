@@ -207,8 +207,8 @@ export function Station3Think() {
 export function Station4Pitch({ onAccept }: { onAccept: () => void }) {
   const [received, setReceived] = useState(false);
   return (
-    <div className="w-full max-w-2xl mx-auto px-6 relative">
-      <div className="absolute right-6 -top-2 md:right-0 md:-top-8 flex items-center gap-2 font-mono-ob text-xs" style={{ color: "var(--text-primary)" }}>
+    <div className="w-full max-w-2xl mx-auto px-6 relative pt-8">
+      <div className="absolute right-6 top-0 flex items-center gap-2 font-mono-ob text-xs" style={{ color: "var(--text-primary)" }}>
         <span className="live-dot w-2 h-2 rounded-full" style={{ background: "var(--accent-live)" }} />
         LIVE
       </div>
