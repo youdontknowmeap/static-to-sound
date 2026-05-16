@@ -9,8 +9,9 @@ const fadeUp = {
 
 export function Station0Static() {
   return (
-    <div className="relative w-full h-full static-noise flex items-center justify-center overflow-hidden">
-      <div className="text-center">
+    <div className="relative w-full h-full min-h-[260px] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 static-noise opacity-60" />
+      <div className="relative text-center px-6">
         <div className="font-mono-ob text-base md:text-2xl tracking-[0.3em]" style={{ color: "var(--text-primary)" }}>
           ░░ SEARCHING FOR SIGNAL ░░
         </div>
@@ -151,7 +152,7 @@ export function Station3Think() {
   )[0];
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="relative w-full min-h-[280px] flex items-center justify-center overflow-hidden py-10">
       <div className="absolute inset-0 pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -169,8 +170,8 @@ export function Station3Think() {
         ))}
       </div>
 
-      <button onClick={() => go(-1)} data-cursor="grab" className="absolute left-4 md:left-10 text-3xl md:text-5xl" style={{ color: "var(--text-secondary)" }}>‹</button>
-      <button onClick={() => go(1)} data-cursor="grab" className="absolute right-4 md:right-10 text-3xl md:text-5xl" style={{ color: "var(--text-secondary)" }}>›</button>
+      <button onClick={() => go(-1)} data-cursor="grab" className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-3xl md:text-5xl z-10" style={{ color: "var(--text-secondary)" }}>‹</button>
+      <button onClick={() => go(1)} data-cursor="grab" className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-3xl md:text-5xl z-10" style={{ color: "var(--text-secondary)" }}>›</button>
 
       <motion.div
         key={idx}
@@ -178,20 +179,20 @@ export function Station3Think() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-2xl text-center px-8"
+        className="max-w-2xl text-center px-12 md:px-20"
       >
-        <div className="font-display italic text-2xl md:text-[36px] leading-tight" style={{ color: "var(--text-primary)" }}>
+        <div className="font-display italic text-xl md:text-3xl leading-tight" style={{ color: "var(--text-primary)" }}>
           {statements[idx].map((line, i) => (
             <div key={i}>{line || "\u00A0"}</div>
           ))}
         </div>
       </motion.div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
         {statements.map((_, i) => (
           <div
             key={i}
-            className="w-2 h-2 rounded-full"
+            className="w-1.5 h-1.5 rounded-full"
             style={{
               background: i === idx ? "var(--accent)" : "transparent",
               border: "1px solid var(--accent)",
@@ -206,8 +207,8 @@ export function Station3Think() {
 export function Station4Pitch({ onAccept }: { onAccept: () => void }) {
   const [received, setReceived] = useState(false);
   return (
-    <div className="w-full max-w-2xl mx-auto px-6 relative">
-      <div className="absolute right-6 -top-2 md:right-0 md:-top-8 flex items-center gap-2 font-mono-ob text-xs" style={{ color: "var(--text-primary)" }}>
+    <div className="w-full max-w-2xl mx-auto px-6 relative pt-8">
+      <div className="absolute right-6 top-0 flex items-center gap-2 font-mono-ob text-xs" style={{ color: "var(--text-primary)" }}>
         <span className="live-dot w-2 h-2 rounded-full" style={{ background: "var(--accent-live)" }} />
         LIVE
       </div>
@@ -272,22 +273,22 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
   }, [allVisited]);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="relative w-full flex items-center justify-center py-6">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(circle at 50% 50%, rgba(232,160,48,0.08), transparent 60%)" }}
       />
       <div className="relative max-w-xl text-center px-6">
-        <motion.h2 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="font-display italic font-bold text-4xl md:text-6xl" style={{ color: "var(--text-primary)" }}>
+        <motion.h2 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="font-display italic font-bold text-3xl md:text-5xl" style={{ color: "var(--text-primary)" }}>
           YOU MADE IT.
         </motion.h2>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-6 text-base md:text-lg" style={{ color: "var(--text-secondary)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-4 text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>
           Either you were very curious,<br />or very bored.
         </motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-4 text-lg md:text-xl" style={{ color: "var(--text-primary)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-3 text-base md:text-lg" style={{ color: "var(--text-primary)" }}>
           Either way — hi.<br />I'm Aryaman.
         </motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-4 font-display italic text-xl md:text-2xl" style={{ color: "var(--accent)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-3 font-display italic text-lg md:text-xl" style={{ color: "var(--accent)" }}>
           Let's talk.
         </motion.p>
 
@@ -297,7 +298,7 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           data-cursor="grab"
-          className="mt-8 inline-block font-mono-ob uppercase tracking-[0.1em] px-10 py-3.5 border transition-all"
+          className="mt-5 inline-block font-mono-ob uppercase tracking-[0.1em] text-sm px-8 py-2.5 border transition-all"
           style={{ borderColor: "var(--accent)", color: "var(--accent)" }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLElement;
@@ -315,13 +316,13 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
           [ Tune in together → ]
         </motion.a>
 
-        <div className="mt-6 flex justify-center gap-6 font-mono-ob text-xs" style={{ color: "var(--text-secondary)" }}>
+        <div className="mt-4 flex justify-center gap-6 font-mono-ob text-xs" style={{ color: "var(--text-secondary)" }}>
           <a href={PORTFOLIO} target="_blank" rel="noreferrer" className="ob-link" data-cursor="grab">↗ Portfolio</a>
           <a href={LINKEDIN} target="_blank" rel="noreferrer" className="ob-link" data-cursor="grab">↗ LinkedIn</a>
           <a href={MAILTO} className="ob-link" data-cursor="grab">✉ Email</a>
         </div>
 
-        <p className="mt-4 font-body-ob italic text-xs" style={{ color: "var(--text-secondary)" }}>
+        <p className="mt-3 font-body-ob italic text-xs" style={{ color: "var(--text-secondary)" }}>
           or just keep tuning. i don't mind.
         </p>
 
@@ -330,7 +331,7 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="mt-10 font-body-ob italic text-sm"
+            className="mt-5 font-body-ob italic text-xs md:text-sm"
             style={{ color: "var(--accent)" }}
           >
             ps. you explored every frequency.<br />you're going to fit right in.

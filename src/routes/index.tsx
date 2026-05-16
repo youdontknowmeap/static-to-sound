@@ -43,7 +43,8 @@ function Index() {
       className="fixed inset-0 overflow-hidden transition-colors duration-700"
       style={{
         background: bg,
-        ["--knob-size" as any]: "clamp(130px, 18vw, 200px)",
+        ["--knob-size" as any]: "clamp(110px, 14vw, 170px)",
+        ["--dial-area" as any]: "clamp(180px, 22vh, 240px)",
       }}
     >
       <Cursor />
@@ -57,11 +58,12 @@ function Index() {
 
       {/* Content area */}
       <main
-        className="relative z-10 flex items-center justify-center transition-all duration-300"
+        className="relative z-10 flex items-start md:items-center justify-center overflow-y-auto"
         style={{
-          height: "calc(100vh - 80px - clamp(190px, 26vh, 280px))",
+          height: "calc(100vh - 72px - var(--dial-area))",
           filter: dragging ? "blur(4px)" : "blur(0)",
           opacity: dragging ? 0.6 : 1,
+          transition: "filter 0.25s ease, opacity 0.25s ease",
         }}
       >
         <AnimatePresence mode="wait">
@@ -71,7 +73,7 @@ function Index() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full min-h-full flex items-center justify-center py-6"
           >
             {stationId === 0 && <Station0Static />}
             {stationId === 1 && <Station1Who />}
