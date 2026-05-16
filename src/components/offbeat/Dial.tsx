@@ -141,9 +141,8 @@ export function Dial({ stationId, onChange, nudge }: Props) {
           onPointerCancel={onPointerUp}
           className="knob absolute inset-0 rounded-full touch-none"
           style={{ rotate: rotation }}
-          animate={pulse > 0 ? { scale: [1, 0.97, 1.03, 1] } : undefined}
+          animate={{ scale: pulse > 0 ? [1, 0.97, 1.03, 1] : 1 }}
           transition={{ duration: 0.22 }}
-          key={pulse} // re-trigger pulse animation
         >
           <div className="knob-notch" />
           <div className="absolute inset-[18%] rounded-full border border-[#222] bg-[#0a0a0a]" />
