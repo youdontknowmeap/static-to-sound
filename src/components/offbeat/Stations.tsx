@@ -217,7 +217,7 @@ export function Station4Pitch({ onAccept }: { onAccept: () => void }) {
           {[
             <>You're building something<br />nobody's seen before.</>,
             <>That means the design brief<br />doesn't exist yet.</>,
-            <>I've spent 5 years designing in<br />exactly that condition.</>,
+            <>I've spent the last year designing in<br />exactly that condition.</>,
             <><span style={{ color: "var(--accent)" }} className="font-display italic">I don't need a brief.<br />I help write it.</span></>,
             <>OFF/BEAT needs a designer<br />who thinks like a founder.</>,
           ].map((line, i) => (
