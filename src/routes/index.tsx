@@ -58,11 +58,12 @@ function Index() {
 
       {/* Content area */}
       <main
-        className="relative z-10 flex items-center justify-center transition-all duration-300"
+        className="relative z-10 flex items-start md:items-center justify-center overflow-y-auto"
         style={{
-          height: "calc(100vh - 80px - clamp(190px, 26vh, 280px))",
+          height: "calc(100vh - 72px - var(--dial-area))",
           filter: dragging ? "blur(4px)" : "blur(0)",
           opacity: dragging ? 0.6 : 1,
+          transition: "filter 0.25s ease, opacity 0.25s ease",
         }}
       >
         <AnimatePresence mode="wait">
