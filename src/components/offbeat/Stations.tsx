@@ -273,22 +273,22 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
   }, [allVisited]);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="relative w-full flex items-center justify-center py-6">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(circle at 50% 50%, rgba(232,160,48,0.08), transparent 60%)" }}
       />
       <div className="relative max-w-xl text-center px-6">
-        <motion.h2 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="font-display italic font-bold text-4xl md:text-6xl" style={{ color: "var(--text-primary)" }}>
+        <motion.h2 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="font-display italic font-bold text-3xl md:text-5xl" style={{ color: "var(--text-primary)" }}>
           YOU MADE IT.
         </motion.h2>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-6 text-base md:text-lg" style={{ color: "var(--text-secondary)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-4 text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>
           Either you were very curious,<br />or very bored.
         </motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-4 text-lg md:text-xl" style={{ color: "var(--text-primary)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-3 text-base md:text-lg" style={{ color: "var(--text-primary)" }}>
           Either way — hi.<br />I'm Aryaman.
         </motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-4 font-display italic text-xl md:text-2xl" style={{ color: "var(--accent)" }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-3 font-display italic text-lg md:text-xl" style={{ color: "var(--accent)" }}>
           Let's talk.
         </motion.p>
 
@@ -298,7 +298,7 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           data-cursor="grab"
-          className="mt-8 inline-block font-mono-ob uppercase tracking-[0.1em] px-10 py-3.5 border transition-all"
+          className="mt-5 inline-block font-mono-ob uppercase tracking-[0.1em] text-sm px-8 py-2.5 border transition-all"
           style={{ borderColor: "var(--accent)", color: "var(--accent)" }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLElement;
@@ -316,13 +316,13 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
           [ Tune in together → ]
         </motion.a>
 
-        <div className="mt-6 flex justify-center gap-6 font-mono-ob text-xs" style={{ color: "var(--text-secondary)" }}>
+        <div className="mt-4 flex justify-center gap-6 font-mono-ob text-xs" style={{ color: "var(--text-secondary)" }}>
           <a href={PORTFOLIO} target="_blank" rel="noreferrer" className="ob-link" data-cursor="grab">↗ Portfolio</a>
           <a href={LINKEDIN} target="_blank" rel="noreferrer" className="ob-link" data-cursor="grab">↗ LinkedIn</a>
           <a href={MAILTO} className="ob-link" data-cursor="grab">✉ Email</a>
         </div>
 
-        <p className="mt-4 font-body-ob italic text-xs" style={{ color: "var(--text-secondary)" }}>
+        <p className="mt-3 font-body-ob italic text-xs" style={{ color: "var(--text-secondary)" }}>
           or just keep tuning. i don't mind.
         </p>
 
@@ -331,7 +331,7 @@ export function Station5Tune({ allVisited }: { allVisited: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="mt-10 font-body-ob italic text-sm"
+            className="mt-5 font-body-ob italic text-xs md:text-sm"
             style={{ color: "var(--accent)" }}
           >
             ps. you explored every frequency.<br />you're going to fit right in.
