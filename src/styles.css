@@ -153,9 +153,9 @@
   --accent-live: #E03030;
   --border-ob: #1E1E1E;
 
-  --font-display: "Playfair Display", serif;
-  --font-mono: "Space Mono", monospace;
-  --font-body: "Syne", sans-serif;
+  --font-display: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-body: Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 
 html, body {
