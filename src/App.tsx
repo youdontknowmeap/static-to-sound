@@ -1,5 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Cursor } from "@/components/offbeat/Cursor";
 import { Dial } from "@/components/offbeat/Dial";
@@ -14,9 +13,7 @@ import {
   Station5Tune,
 } from "@/components/offbeat/Stations";
 
-export const Route = createFileRoute("/")({ component: Index });
-
-function Index() {
+export default function App() {
   const [stationId, setStationId] = useState(0);
   const [dragging, setDragging] = useState(false);
   const [nudge, setNudge] = useState(0);
@@ -35,7 +32,6 @@ function Index() {
   const station = STATIONS[stationId];
   const bg = STATION_BG[stationId];
 
-  // Trigger a small nudge from Station 4 -> hint toward 5
   const triggerNudge = () => setNudge((n) => n + 1);
 
   return (
@@ -50,13 +46,11 @@ function Index() {
       <Cursor />
       <div className="grain-overlay" data-intense={dragging ? "true" : "false"} />
 
-      {/* Top bar */}
       <header className="relative z-20 flex items-center justify-between px-5 md:px-10 py-5 md:py-7">
         <FreqDisplay value={station.freq} scrambling={dragging} />
         <StationName name={station.name} scrambling={dragging} />
       </header>
 
-      {/* Content area */}
       <main
         className="relative z-10 flex items-start md:items-center justify-center overflow-y-auto"
         style={{
@@ -85,12 +79,10 @@ function Index() {
         </AnimatePresence>
       </main>
 
-      {/* Dial pinned bottom */}
       <footer className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-center pb-8 md:pb-10">
         <Dial stationId={stationId} onChange={handleChange} nudge={nudge} />
       </footer>
 
-      {/* corner brand */}
       <div className="absolute bottom-4 left-5 z-20 font-mono-ob text-[10px] tracking-[0.3em]" style={{ color: "var(--text-secondary)" }}>
         OFF/BEAT · TUNING IN
       </div>
