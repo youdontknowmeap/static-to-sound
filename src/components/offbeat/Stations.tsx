@@ -10,7 +10,7 @@ const fadeUp = {
 export function Station0Static() {
   return (
     <div className="relative w-full h-full static-noise flex items-center justify-center overflow-hidden">
-      <div className="text-center flicker">
+      <div className="text-center">
         <div className="font-mono-ob text-base md:text-2xl tracking-[0.3em]" style={{ color: "var(--text-primary)" }}>
           ░░ SEARCHING FOR SIGNAL ░░
         </div>
@@ -33,16 +33,10 @@ export function Station1Who() {
           ARYAMAN.
         </motion.h1>
         <motion.p custom={2} variants={fadeUp} initial="hidden" animate="show" className="mt-4 text-lg md:text-xl" style={{ color: "var(--text-primary)" }}>
-          Product Design Lead.<br />Based in India.<br />Building things that feel inevitable in hindsight.
+          Product Designer.<br />Based in India.<br />Building things that feel inevitable in hindsight.
         </motion.p>
         <motion.p custom={4} variants={fadeUp} initial="hidden" animate="show" className="mt-6 text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>
-          5+ years designing products people actually use. Former lead at{" "}
-          <span className="relative group" data-cursor="grab">
-            <span className="underline decoration-dotted" style={{ color: "var(--text-primary)" }}>Elevation Labs</span>
-            <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-8 whitespace-nowrap font-mono-ob text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition" style={{ background: "#000", color: "var(--accent)", border: "1px solid var(--accent)" }}>
-              Product Design Lead, 2023–2025
-            </span>
-          </span>.
+          1 year designing products people actually use.
         </motion.p>
         <motion.p custom={6} variants={fadeUp} initial="hidden" animate="show" className="mt-6 font-display italic text-xl md:text-2xl" style={{ color: "var(--accent)" }}>
           Currently tuned in to: what's next.
@@ -68,29 +62,19 @@ export function Station1Who() {
 const tracks = [
   {
     num: "01",
-    title: "NISH",
-    summary: ["Shooting sports scoring app. Full redesign.", "Precision in every pixel."],
-    tags: "PRODUCT DESIGN · SYSTEMS",
-    expand: "Rebuilt the entire information architecture. Shot grouping visualizations, session stats, competitive scoring flows.",
-  },
-  {
-    num: "02",
     title: "DRUNKIN'",
     summary: ["Strava for alcohol. Built in a weekend.", "It works. You're welcome."],
     tags: "APP PROTOTYPE · UX",
-    expand: "Social tracking, drink logging, friend comparisons. Fully working HTML prototype. Designed and prototyped solo.",
   },
   {
-    num: "03",
-    title: "DESIGN SYSTEMS",
-    summary: ["The thing design teams always need", "and never have. Until now."],
-    tags: "SYSTEMS · SCALE · LEADERSHIP",
-    expand: "Component libraries, token systems, documentation. Cut designer onboarding from 2 weeks to 3 days.",
+    num: "02",
+    title: "CLARITY",
+    summary: ["A financial tracking app.", "Numbers you can actually read."],
+    tags: "PRODUCT DESIGN · FINTECH",
   },
 ];
 
 export function Station2Work() {
-  const [open, setOpen] = useState<number | null>(null);
   return (
     <div className="w-full max-w-3xl mx-auto px-6">
       <div className="font-mono-ob text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--text-secondary)" }}>
@@ -98,14 +82,16 @@ export function Station2Work() {
       </div>
       <div className="mt-8 space-y-1">
         {tracks.map((t, i) => (
-          <motion.div
+          <motion.a
             key={t.num}
+            href={PORTFOLIO}
+            target="_blank"
+            rel="noreferrer"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="track relative py-5 cursor-pointer border-t"
+            className="track relative py-5 cursor-pointer border-t block"
             style={{ borderColor: "var(--border-ob)" }}
-            onClick={() => setOpen(open === i ? null : i)}
             data-cursor="grab"
           >
             <div className="sweep absolute inset-y-0 left-0 w-0" style={{ background: "rgba(232,160,48,0.18)" }} />
@@ -118,15 +104,10 @@ export function Station2Work() {
                   <div key={j} className="text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>{s}</div>
                 ))}
                 <div className="mt-2 font-mono-ob text-[10px] tracking-[0.2em]" style={{ color: "var(--text-secondary)" }}>{t.tags}</div>
-                <div
-                  className="overflow-hidden transition-all duration-300 ease-out"
-                  style={{ maxHeight: open === i ? 120 : 0 }}
-                >
-                  <p className="pt-3 text-sm md:text-base italic" style={{ color: "var(--accent)" }}>{t.expand}</p>
-                </div>
               </div>
+              <span className="font-mono-ob text-xs self-center" style={{ color: "var(--accent)" }}>↗</span>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
         <div className="border-t" style={{ borderColor: "var(--border-ob)" }} />
       </div>
