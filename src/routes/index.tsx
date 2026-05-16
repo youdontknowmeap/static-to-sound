@@ -73,7 +73,7 @@ function Index() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full min-h-full flex items-center justify-center py-6"
           >
             {stationId === 0 && <Station0Static />}
             {stationId === 1 && <Station1Who />}
