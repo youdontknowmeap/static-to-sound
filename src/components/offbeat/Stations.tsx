@@ -10,7 +10,7 @@ const fadeUp = {
 export function Station0Static() {
   return (
     <div className="relative w-full h-full static-noise flex items-center justify-center overflow-hidden">
-      <div className="text-center flicker">
+      <div className="text-center">
         <div className="font-mono-ob text-base md:text-2xl tracking-[0.3em]" style={{ color: "var(--text-primary)" }}>
           ░░ SEARCHING FOR SIGNAL ░░
         </div>
