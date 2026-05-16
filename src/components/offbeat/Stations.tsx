@@ -116,10 +116,14 @@ export function Station2Work() {
 }
 
 const statements = [
-  ["Good design is obvious.", "Great design is invisible.", "", "I aim for the second one."],
-  ["I think in systems first,", "pixels second."],
-  ["The best UX decision I ever made", "was arguing against a feature", "that would've shipped."],
-  ["Design isn't decoration.", "It's the product's first argument", "for why it should exist."],
+  ["If the user needs a tooltip", "to find the button,", "", "the button lost."],
+  ["\"Make the logo bigger\"", "is just trauma", "in stakeholder form."],
+  ["Every dark pattern", "is a designer who lost", "an argument with the growth team."],
+  ["Hamburger menus are where", "features go to die", "with dignity."],
+  ["The empty state is the only screen", "your user will judge you by", "before they've done anything."],
+  ["I don't design for the user.", "I design for the user", "at 11:47pm, on 4% battery, on the train."],
+  ["A confirmation modal", "is an apology", "you wrote in advance."],
+  ["The best onboarding", "is the one nobody noticed", "they were in."],
 ];
 
 export function Station3Think() {
